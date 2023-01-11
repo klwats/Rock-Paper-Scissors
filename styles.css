@@ -1,0 +1,79 @@
+* {
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    overflow: hidden;
+   
+  }
+  
+  body {
+    height: 100vh;
+    width: 100vw; 
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    background-color: green;
+    height: 100vh;
+    width: 70vw;
+    position: fixed;
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: 2.5rem;  
+}
+
+header {
+    width: 70vw;
+    height: 40vh;
+
+    
+}
+
+h1, h3 {
+    margin: 0px;
+   
+}
+
+.left-side {
+    height: 100vh;
+    width: 15vw;
+    float: left;
+    background-color: red;
+    font-size: 2rem;
+  }
+
+  .right-side {
+    height: 100vh;
+    width: 15vw;
+    float: right;
+    background-color: blue;
+    font-size: 2rem
+  }
+
+  aside {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  div {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .classic-button,
+  .difficult-button {
+    height: 12rem;
+    width: 12rem;
+    color: black;
+    font-size: 6vh;
+    margin: 10px 
+  }
+
+  .home-page-buttons {
+    display: flex;
+    flex-flow: column;
+
+  }
+
+  
