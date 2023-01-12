@@ -17,7 +17,7 @@
 .section-1 {
   height: 100vh;
     width: 15vw;
-    background-color: red;
+    background-color: purple;
     font-size: 2rem;
     display: flex;
     flex-direction: column;
@@ -62,7 +62,7 @@ h1 {
   font-size: 40px;
 }
 
-  .classic, .difficult {
+  .classic-btn, .difficult-btn {
     height: 12rem;
     width: 12rem;
     color: black;
@@ -83,6 +83,14 @@ h1 {
   .icons {
     height: 300px;
     width: 100%;
+  }
+
+  .classic-btn, .difficult-btn, .paper, .rock, .scissors, .iguana, .alien {
+    cursor: pointer;
+  }
+
+  .hidden {
+    display: none;
   }
 
 
