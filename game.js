@@ -6,10 +6,20 @@ class Game {
 
     }
 
+    chooseWinner() {
+        
+    }
+
     draw() {
 
     }
 
-    resetBoard()
+    resetBoard() {
+
+    }
+
+    selectGame() {
+        if ()
+    }
 
 }
