@@ -9,32 +9,28 @@
     <title>Rock-Paper-Scissors</title>
 </head>
 <body>
-    <main>
-        <header>
-            <h1>Rock, Paper, Scissors</h1>
-            <h3>Choose Your Game!</h3>
-        </header>
-        <div>
-            <section class="home-page-buttons">
-                <button class="classic-button">Classic</button>
-                <button class="difficult-button">Difficult</button>
-            </section>
-        </div>    
-        <section>
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-        </section>
-    </main>
-    <aside class="left-side">
-        <img src="" alt="">
+    <aside class="section-1">
         <h3>Human</h3>
         <h4>Wins: 0</h4>
     </aside>
-    <aside class="right-side">
-        <img src="" alt="">
+    <main class="section-2">
+        <header>
+            <h1>Rock, Paper, Scissors</h1>
+            <h3 class="choose-game">Choose Your Game!</h3>
+        </header>
+        <section class="buttons-container">
+            <button class="classic" id="classicButton">Classic</button>
+            <button class="difficult" id="difficultButton">Difficult</button>
+        </section>
+        <section class="icons">
+            <button class="paper" id="paperIcon"><img src="icons/happy-paper.png" style="width: 100px; height: 100px" alt=""></button>
+            <button class="rock" id="rockIcon"><img src="icons/happy-rocks.png" style="width: 100px; height: 100px" alt=""></button>
+            <button class="scissors" id="scissorsIcon"><img src="icons/happy-scissors.png" style="width: 100px; height: 100px" alt=""></button>
+            <button class="iguana" id="iguanaIcon"><img src="icons/iguana.png" style="width: 100px; height: 100px" alt=""></button>
+            <button class="alien" id="alienIcon"><img src="icons/lines-alien.png" style="width: 100px; height: 100px" alt=""></button>
+        </section>
+    </main>
+    <aside class="section-3">
         <h3>Computer</h3>
         <h4>Wins: 0</h4>
     </aside>
