@@ -13,6 +13,7 @@
         <h4 class="human-logo">🤦🏼‍♀️</h4>
         <h3>Human</h3>
         <h4>Wins: 0</h4>
+        <button class="reset-btn hidden" id="resetGame">Reset Game</button>
     </aside>
     <main class="section-2">
         <header>
@@ -24,11 +25,21 @@
             <button class="difficult-btn" id="difficultButton">Difficult</button>
         </section>
         <section class="icons" id="iconsSection">
-            <button class="paper classic difficult hidden" id="paperIcon"><img src="icons/happy-paper.png" style="width: 100px; height: 100px" alt=""></button>
-            <button class="rock classic difficult hidden" id="rockIcon"><img src="icons/happy-rocks.png" style="width: 100px; height: 100px" alt=""></button>
-            <button class="scissors classic difficult hidden" id="scissorsIcon"><img src="icons/happy-scissors.png" style="width: 100px; height: 100px" alt=""></button>
-            <button class="iguana difficult hidden" id="iguanaIcon"><img src="icons/iguana.png" style="width: 100px; height: 100px" alt=""></button>
-            <button class="alien difficult hidden" id="alienIcon"><img src="icons/lines-alien.png" style="width: 100px; height: 100px" alt=""></button>
+            <button class="paper classic difficult hidden" id="paperIcon">
+                <img id="paper" src="icons/happy-paper.png" style="width: 100px; height: 100px" alt=""></button>
+                <label class="paper-label hidden" for="paper">🤦🏼‍♀️</label>
+            <button class="rock classic difficult hidden" id="rockIcon">
+                <img src="icons/happy-rocks.png" style="width: 100px; height: 100px" alt=""></button>
+                <label class="rock-label hidden" for="rock">🤦🏼‍♀️</label>
+            <button class="scissors classic difficult hidden" id="scissorsIcon">
+                <img src="icons/happy-scissors.png" style="width: 100px; height: 100px" alt=""></button>
+                <label class="scissors-label hidden" for="scissors">🤦🏼‍♀️</label>
+            <button class="iguana difficult hidden" id="iguanaIcon">
+                <img src="icons/iguana.png" style="width: 100px; height: 100px" alt=""></button>
+                <label class="iguana-label hidden" for="iguana">🤦🏼‍♀️</label>
+            <button class="alien difficult hidden" id="alienIcon">
+                <img src="icons/lines-alien.png" style="width: 100px; height: 100px" alt=""></button>
+                <label class="alien-label hidden" for="alien">🤦🏼‍♀️</label>
         </section>
     </main>
     <aside class="section-3">
@@ -37,5 +48,7 @@
         <h4>Wins: 0</h4>
     </aside>
     <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript" src="player.js"></script>
 </body>
 </html>

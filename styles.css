@@ -85,7 +85,7 @@ h1 {
     width: 100%;
   }
 
-  .classic-btn, .difficult-btn, .paper, .rock, .scissors, .iguana, .alien {
+  .classic-btn, .difficult-btn, .paper, .rock, .scissors, .iguana, .alien, .reset-btn {
     cursor: pointer;
   }
 
@@ -93,5 +93,9 @@ h1 {
     display: none;
   }
 
+  .reset-btn {
+    background-color: black;
+    margin-top: 2rem
+  }
 
   

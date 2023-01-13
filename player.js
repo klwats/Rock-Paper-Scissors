@@ -3,10 +3,13 @@ class Player{
         this.name = name;
         this.token = token;
         this.wins = 0;
-        this.fighter = fighter
+        this.fighter = fighter;
     }
 
     takeTurn() {
+
         
 }
 }
+
+
