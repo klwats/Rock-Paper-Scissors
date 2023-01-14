@@ -72,6 +72,8 @@ h1 {
 
   .buttons-container {
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .home-page-buttons {
@@ -83,9 +85,12 @@ h1 {
   .icons {
     height: 300px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .classic-btn, .difficult-btn, .paper, .rock, .scissors, .iguana, .alien, .reset-btn {
+  .classic-btn, .difficult-btn, .paper, .rock, .scissors, .iguana, .alien, .change-btn {
     cursor: pointer;
   }
 
@@ -93,7 +98,7 @@ h1 {
     display: none;
   }
 
-  .reset-btn {
+  .change-btn {
     background-color: black;
     margin-top: 2rem
   }
