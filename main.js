@@ -12,11 +12,11 @@ var difficultIcons = document.querySelectorAll('.difficult');
 var buttonsSection = document.querySelector('.buttons-container');
 var chooseGameHeader = document.querySelector('.choose-game');
 var resetGameBtn = document.querySelector('.reset-btn');
-var paperLady = document.querySelector('.paper-lady-icon');
-var rockLady = document.querySelector('.rock-lady-icon');
-var scissorLady = document.querySelector('.scissors-lady-icon');
-var iguanaLady = document.querySelector('.iguana-lady-icon');
-var alienLady = document.querySelector('.alien-lady-icon');
+// var paperLady = document.querySelector('.paper-lady-icon');
+// var rockLady = document.querySelector('.rock-lady-icon');
+// var scissorLady = document.querySelector('.scissors-lady-icon');
+// var iguanaLady = document.querySelector('.iguana-lady-icon');
+// var alienLady = document.querySelector('.alien-lady-icon');
 var labels = document.querySelectorAll('label')
 
 
@@ -64,16 +64,12 @@ function humanSelection(event) {
             labels[i].classList.remove('hidden')
         }
     }
-    
-    //update game/player class to correct fighter
-    //set timeout
-    //trigger function that generates random index for computer to select fighter
+        setTimeout(randomFighter(), 1000)
 }
-
-
-
-
-
+    
+function randomFighter(array) {
+    newGame.computer.fighter = Math.floor(Math.random() * array.length)
+}
 
 // function chooseWinner() {
 //     if (this.winner = 'computer') { 
@@ -85,8 +81,8 @@ function humanSelection(event) {
 // [DONE]click classic button, button-container disappears and icons appear
 // [DONE]click classic and classic icons appear
 // [DONE]click difficult and difficult icons appear
-// human selects icon and their logo is attached under their selection
-//     function to display icon
+// [DONE] human selects icon and their logo is attached under their selection
+//     [DONE]function to display icon
 //      function to switch players (computer selects) 
 // then computer randomly selects icon and their selection + human selection icons appear
 // rest of the icons disappear
