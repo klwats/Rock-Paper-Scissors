@@ -19,6 +19,8 @@ var changeGameBtn = document.querySelector('.change-btn');
 // var alienLady = document.querySelector('.alien-lady-icon');
 var labels = document.querySelectorAll('label')
 var iconSection = document.querySelector('.icons')
+var humanWins = document.querySelector('.humanWins');
+var compWins = document.querySelector('.compWins')
 
 
 var classicFighters = ['rock', 'paper', 'scissors'];
@@ -76,7 +78,13 @@ function humanSelection(event) {
             labels[i].classList.remove('hidden')
         }
     }
-        setTimeout(computerSelection(), 1000)
+        setTimeout(() => {
+            for (var i = 0; i < labels.length; i++) {
+                labels[i].classList.add('hidden')
+            }
+            computerSelection()
+        }, 1000)
+
 }
     
 function computerSelection() {
@@ -85,24 +93,30 @@ function computerSelection() {
         displayComputerSelection(classicFighters)
     } else {
         newGame.computer.fighter = randomFighter(difficultFighters)
-        displayComputerSelection(difficultFighters)
+        displaySelections(difficultFighters)
     }
 }
 
-function displayComputerSelection(array) {
+function displaySelections(array) {
     for (var i = 0; i < array.length; i++) {
         if (newGame.computer.fighter !== array[i] && newGame.human.fighter !== array[i]) {
         difficultIcons[i].classList.add('hidden')
     } 
 }
+newGame.chooseWinner()
+displayWinner()
+}
+
+function displayWinner() {
+    if (newGame.winner === 'human') {
+        humanWins.innerText = newGame.human.wins
+    } else {
+        compWins.innerText = newGame.computer.wins
+    }
+
 }
 
 
-// function chooseWinner() {
-//     if (this.winner = 'computer') { 
-//     }
-
-// }
 
 
 // [DONE]click classic button, button-container disappears and icons appear

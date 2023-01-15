@@ -11,6 +11,7 @@ class Game {
 
     
     chooseWinner() {
+        console.log('blouse')
         if (this.human.fighter === this.computer.fighter) {
             this.draw()
         } else if (this.human.fighter === 'scissors' && this.computer.fighter === 'paper') {
@@ -50,6 +51,8 @@ class Game {
             this.human.wins ++;
             this.winner = 'human'
         } 
+        console.log('puter', this.computer.fighter, this.computer.wins)
+        console.log('kat', this.human.fighter, this.human.wins)
     }
 
     draw() {
