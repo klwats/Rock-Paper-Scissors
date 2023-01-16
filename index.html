@@ -21,24 +21,30 @@
             <h3 class="choose-game">Choose Your Game!</h3>
         </header>
         <section class="buttons-container" id="buttons">
-            <button class="classic-btn" id="classicButton">Classic</button>
-            <button class="difficult-btn" id="difficultButton">Difficult</button>
+            <button class="classic-btn" id="classicButton">
+                <span class="classic-title">Classic<br></span>
+                <span class="classic-rules">rock>scissors<br> paper>rock<br> scissors>paper</span>
+            </button>
+            <button class="difficult-btn" id="difficultButton"> 
+                <span class="difficult-title">Difficult</span>
+                <span class="difficult-rules">rock>scissors & lizard paper>rock & alien scissors>paper & lizard lizard>paper & alien alien>scissors & rock</span>
+            </button>
         </section>
         <section class="icons" id="iconsSection">
             <button class="paper classic difficult hidden" id="paperIcon">
-                <img id="paper" src="icons/happy-paper.png" style="width: 100px; height: 100px" alt=""></button>
+                <img class="pi" id="paper" src="icons/happy-paper.png" style="width: 100px; height: 100px" alt=""></button>
                 <label class="paper-label hidden" for="paper">🤦🏼‍♀️</label>
             <button class="rock classic difficult hidden" id="rockIcon">
-                <img id="rock" src="icons/happy-rocks.png" style="width: 100px; height: 100px" alt=""></button>
+                <img class="ri" id="rock" src="icons/happy-rocks.png" style="width: 100px; height: 100px" alt=""></button>
                 <label class="rock-label hidden" for="rock">🤦🏼‍♀️</label>
             <button class="scissors classic difficult hidden" id="scissorsIcon">
-                <img id="scissors" src="icons/happy-scissors.png" style="width: 100px; height: 100px" alt=""></button>
+                <img class="si" id="scissors" src="icons/happy-scissors.png" style="width: 100px; height: 100px" alt=""></button>
                 <label class="scissors-label hidden" for="scissors">🤦🏼‍♀️</label>
             <button class="iguana difficult hidden" id="iguanaIcon">
-                <img id="iguana" src="icons/iguana.png" style="width: 100px; height: 100px" alt=""></button>
+                <img class="ii" id="iguana" src="icons/iguana.png" style="width: 100px; height: 100px" alt=""></button>
                 <label class="iguana-label hidden" for="iguana">🤦🏼‍♀️</label>
             <button class="alien difficult hidden" id="alienIcon">
-                <img id="alien" src="icons/lines-alien.png" style="width: 100px; height: 100px" alt=""></button>
+                <img class="ai" id="alien" src="icons/lines-alien.png" style="width: 100px; height: 100px" alt=""></button>
                 <label class="alien-label hidden" for="alien">🤦🏼‍♀️</label>
         </section>
     </main>

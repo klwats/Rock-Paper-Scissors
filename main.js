@@ -22,15 +22,14 @@ var iconSection = document.querySelector('.icons')
 var humanWins = document.querySelector('.humanWins');
 var compWins = document.querySelector('.compWins')
 
-
 var classicFighters = ['rock', 'paper', 'scissors'];
 var difficultFighters = ['rock', 'paper', 'scissors', 'alien', 'iguana']
+
 
 window.addEventListener('load', fireGame)
 classicBtn.addEventListener('click', selectClassic)
 difficultBtn.addEventListener('click', selectDifficult)
 changeGameBtn.addEventListener('click', changeGame)
-
 
 paper.addEventListener('click', humanSelection)
 rock.addEventListener('click', humanSelection)
@@ -48,8 +47,10 @@ function randomFighter(array){
 }
 
 function selectClassic() {
+    newGame.gameType = 'classic';
     buttonsSection.classList.add('hidden');
     changeGameBtn.classList.remove('hidden');
+    iconSection.classList.remove('hidden');
     chooseGameHeader.innerText = 'Choose Your Fighter!';
     for (var i = 0; i < classicIcons.length; i++) {
         classicIcons[i].classList.remove('hidden')
@@ -57,8 +58,10 @@ function selectClassic() {
 }
 
 function selectDifficult() {
+    newGame.gameType = 'difficult';
     buttonsSection.classList.add('hidden');
     changeGameBtn.classList.remove('hidden');
+    iconSection.classList.remove('hidden');
     chooseGameHeader.innerText = 'Choose Your Fighter!';
     for (var i = 0; i < difficultIcons.length; i++) {
         difficultIcons[i].classList.remove('hidden')
@@ -67,7 +70,7 @@ function selectDifficult() {
 
 function changeGame() {
     buttonsSection.classList.remove('hidden');
-    //iconSection.classList.add('hidden')
+    iconSection.classList.add('hidden');
     chooseGameHeader.innerText = 'Choose Your Game!'
 }
 
@@ -84,37 +87,58 @@ function humanSelection(event) {
             }
             computerSelection()
         }, 1000)
-
 }
     
 function computerSelection() {
     if (newGame.gameType === 'classic') {
-        newGame.computer.fighter = randomFighter(classicFighters)
-        displayComputerSelection(classicFighters)
+        newGame.computer.fighter = randomFighter(classicFighters);
+        displaySelections(classicFighters)
     } else {
-        newGame.computer.fighter = randomFighter(difficultFighters)
+        newGame.computer.fighter = randomFighter(difficultFighters);
         displaySelections(difficultFighters)
     }
 }
 
 function displaySelections(array) {
-    for (var i = 0; i < array.length; i++) {
-        if (newGame.computer.fighter !== array[i] && newGame.human.fighter !== array[i]) {
-        difficultIcons[i].classList.add('hidden')
-    } 
+    // for (var i = 0; i < array.length; i++) {
+    //     if (newGame.computer.fighter !== array[i] && newGame.human.fighter !== array[i]) {
+    //     difficultIcons[i].classList.add('hidden')
+    //} 
+//}
+    newGame.chooseWinner()
+    increaseScore()
 }
-newGame.chooseWinner()
-displayWinner()
+
+function increaseScore() {
+    if (newGame.winner === 'human') {
+        humanWins.innerText = newGame.human.wins
+    } else if (newGame.winner === 'computer') {
+        compWins.innerText = newGame.computer.wins
+    }
+    displayWinner()
 }
 
 function displayWinner() {
+    console.log(newGame.winner)
     if (newGame.winner === 'human') {
-        humanWins.innerText = newGame.human.wins
-    } else {
-        compWins.innerText = newGame.computer.wins
-    }
-
+        chooseGameHeader.innerText = '🤦🏼‍♀️ Human Won This Round! 🤦🏼‍♀️'
+    } else if (newGame.winner === 'computer') {
+        chooseGameHeader.innerText = '🖥️ Computer Won This Round! 🖥️'
+    } 
+    setTimeout(() => {
+        newGame.resetBoard()
+    }, 3000)
 }
+
+function displayDraw() {
+    chooseGameHeader.innerText = 'It/s a Draw'
+    setTimeout(() => {
+        newGame.resetBoard()
+    }, 3000)
+}
+
+
+
 
 
 
@@ -126,8 +150,15 @@ function displayWinner() {
 //     [DONE]function to display icon
 //      [DONE]function to switch players (computer selects) 
 // [DONE]then computer randomly selects icon 
-    //and their selection + human selection icons appear
+    //[DONE]//and their selection + human selection icons appear
 // [DONE]rest of the icons disappear
-// call choosewinner method to determine winner
-// then a winner is declared - winner score increased by 1; winner icon appears; select game icon appears
-// function resetgame (not resetting game instance); clearing game type, fighters
+// [DONE]call choosewinner method to determine winner
+// [DONE]then a winner is declared: 
+        //[DONE}winner score increased by 1; 
+        //[DONE]text declaring winner appears; 
+        //[DONE]game resets with all of the icons
+// [DONE] function resetgame (not resetting game instance); clearing game type, fighters
+
+// display correct icons
+// display icons on correct side
+// including draw icons

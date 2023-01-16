@@ -8,8 +8,7 @@ class Player{
 
     takeTurn() {
 
-        
-}
+    }
 }
 
 
