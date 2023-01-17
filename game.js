@@ -5,12 +5,10 @@ class Game {
         this.gameType = '';
         this.fighters = [];
         this.winner = '';
-        this.draw;
-        
+        this.draw;   
     }
 
     chooseWinner() {
-        console.log('blouse', this.gameType)
         if (this.human.fighter === this.computer.fighter) {
             this.declareDraw()
         } else if (this.human.fighter === 'scissors' && this.computer.fighter === 'paper') {
@@ -74,8 +72,6 @@ class Game {
             this.human.wins ++;
             this.winner = 'human'
         }
-        console.log('puter', this.computer.fighter, this.computer.wins)
-        console.log('kat', this.human.fighter, this.human.wins)
     }
 
     declareDraw() {
@@ -87,9 +83,13 @@ class Game {
     resetBoard() {
         this.winner = ''
         if (this.gameType === 'classic') {
-            selectClassic()
+            selectClassic();
+            humanChoice.innerHTML = '';
+            computerChoice.innerHTML = '';
         } else {
             selectDifficult()
+            humanChoice.innerHTML = '';
+            computerChoice.innerHTML = '';
         }  
     }
 }

@@ -12,44 +12,45 @@ var difficultIcons = document.querySelectorAll('.difficult');
 var buttonsSection = document.querySelector('.buttons-container');
 var chooseGameHeader = document.querySelector('.choose-game');
 var changeGameBtn = document.querySelector('.change-btn');
-var labels = document.querySelectorAll('label')
-var iconSection = document.querySelector('.icons')
+var labels = document.querySelectorAll('label');
+var iconSection = document.querySelector('.icons');
 var humanWins = document.querySelector('.humanWins');
 var compWins = document.querySelector('.compWins');
-var humanChoice = document.querySelector('.human-choice')
+var humanChoice = document.querySelector('.human-choice');
 var computerChoice = document.querySelector('.computer-choice');
-var images = document.querySelectorAll('.image')
+var images = document.querySelectorAll('.image');
 
 
 var classicFighters = ['rock', 'paper', 'scissors'];
-var difficultFighters = ['rock', 'paper', 'scissors', 'alien', 'iguana']
+var difficultFighters = ['rock', 'paper', 'scissors', 'alien', 'iguana'];
 
 
-window.addEventListener('load', fireGame)
-classicBtn.addEventListener('click', selectClassic)
-difficultBtn.addEventListener('click', selectDifficult)
-changeGameBtn.addEventListener('click', changeGame)
+window.addEventListener('load', fireGame);
+classicBtn.addEventListener('click', selectClassic);
+difficultBtn.addEventListener('click', selectDifficult);
+changeGameBtn.addEventListener('click', changeGame);
 
-paper.addEventListener('click', humanSelection)
-rock.addEventListener('click', humanSelection)
-scissors.addEventListener('click', humanSelection)
-iguana.addEventListener('click', humanSelection)
-alien.addEventListener('click', humanSelection)
+paper.addEventListener('click', humanSelection);
+rock.addEventListener('click', humanSelection);
+scissors.addEventListener('click', humanSelection);
+iguana.addEventListener('click', humanSelection);
+alien.addEventListener('click', humanSelection);
+
 
 function fireGame() {
     newGame = new Game()
 }
 
-function randomFighter(array){
-    var index = Math.floor(Math.random() * array.length)
+function randomFighter(array) {
+    var index = Math.floor(Math.random() * array.length);
     return array[index]
 }
 
 function selectClassic() {
     newGame.gameType = 'classic';
     buttonsSection.classList.add('hidden');
-    iguana.classList.add('hidden')
-    alien.classList.add('hidden')
+    iguana.classList.add('hidden');
+    alien.classList.add('hidden');
     changeGameBtn.classList.remove('hidden');
     iconSection.classList.remove('hidden');
     chooseGameHeader.innerText = 'Choose Your Fighter!';
@@ -101,21 +102,15 @@ function computerSelection() {
 }
 
 function displaySelections(array) {
-    console.log(images)
     for (var i = 0; i < images.length; i++) {
         if (newGame.human.fighter === images[i].id) {
-            humanChoice.innerHTML = (images[i])
-        }
+            var humanClone = images[i].cloneNode()
+            humanChoice.appendChild(humanClone)
+        } else if (newGame.computer.fighter === images[i].id) {
+            var computerClone = images[i].cloneNode()
+            computerChoice.appendChild(computerClone)
     }
-    
-    // humanChoice.innerHTML = newGame.human.fighter
-    // computerChoice.innerHTML = newGame.computer.fighter 
-    
-//     for (var i = 0; i < array.length; i++) {
-//         if (newGame.computer.fighter !== array[i] && newGame.human.fighter !== array[i]) {
-//             difficultIcons[i].classList.add('hidden')
-//     } 
-//    }
+}
     newGame.chooseWinner()
     increaseScore()
 }
@@ -130,7 +125,6 @@ function increaseScore() {
 }
 
 function displayWinner() {
-    console.log(newGame.winner)
     if (newGame.winner === 'human') {
         chooseGameHeader.innerText = '🤦🏼‍♀️ Human Won This Round! 🤦🏼‍♀️'
     } else if (newGame.winner === 'computer') {
@@ -138,22 +132,12 @@ function displayWinner() {
     } 
     setTimeout(() => {
         newGame.resetBoard()
-    }, 3000)
+    }, 1000)
 }
 
 function displayDraw() {
     chooseGameHeader.innerText = 'It/s a Draw'
     setTimeout(() => {
         newGame.resetBoard()
-    }, 3000)
+    }, 1000)
 }
-
-
-
-
-
-
-
-// display correct icons
-// display icons on correct side
-// including draw icons
