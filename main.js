@@ -106,11 +106,12 @@ function displaySelections(array) {
         if (newGame.human.fighter === images[i].id) {
             var humanClone = images[i].cloneNode()
             humanChoice.appendChild(humanClone)
-        } else if (newGame.computer.fighter === images[i].id) {
+        } 
+        if (newGame.computer.fighter === images[i].id) {
             var computerClone = images[i].cloneNode()
             computerChoice.appendChild(computerClone)
+        }
     }
-}
     newGame.chooseWinner()
     increaseScore()
 }
