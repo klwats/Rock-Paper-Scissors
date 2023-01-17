@@ -12,15 +12,14 @@ var difficultIcons = document.querySelectorAll('.difficult');
 var buttonsSection = document.querySelector('.buttons-container');
 var chooseGameHeader = document.querySelector('.choose-game');
 var changeGameBtn = document.querySelector('.change-btn');
-// var paperLady = document.querySelector('.paper-lady-icon');
-// var rockLady = document.querySelector('.rock-lady-icon');
-// var scissorLady = document.querySelector('.scissors-lady-icon');
-// var iguanaLady = document.querySelector('.iguana-lady-icon');
-// var alienLady = document.querySelector('.alien-lady-icon');
 var labels = document.querySelectorAll('label')
 var iconSection = document.querySelector('.icons')
 var humanWins = document.querySelector('.humanWins');
-var compWins = document.querySelector('.compWins')
+var compWins = document.querySelector('.compWins');
+var humanChoice = document.querySelector('.human-choice')
+var computerChoice = document.querySelector('.computer-choice');
+var images = document.querySelectorAll('.image')
+
 
 var classicFighters = ['rock', 'paper', 'scissors'];
 var difficultFighters = ['rock', 'paper', 'scissors', 'alien', 'iguana']
@@ -49,6 +48,8 @@ function randomFighter(array){
 function selectClassic() {
     newGame.gameType = 'classic';
     buttonsSection.classList.add('hidden');
+    iguana.classList.add('hidden')
+    alien.classList.add('hidden')
     changeGameBtn.classList.remove('hidden');
     iconSection.classList.remove('hidden');
     chooseGameHeader.innerText = 'Choose Your Fighter!';
@@ -100,20 +101,30 @@ function computerSelection() {
 }
 
 function displaySelections(array) {
-    // for (var i = 0; i < array.length; i++) {
-    //     if (newGame.computer.fighter !== array[i] && newGame.human.fighter !== array[i]) {
-    //     difficultIcons[i].classList.add('hidden')
-    //} 
-//}
+    console.log(images)
+    for (var i = 0; i < images.length; i++) {
+        if (newGame.human.fighter === images[i].id) {
+            humanChoice.innerHTML = (images[i])
+        }
+    }
+    
+    // humanChoice.innerHTML = newGame.human.fighter
+    // computerChoice.innerHTML = newGame.computer.fighter 
+    
+//     for (var i = 0; i < array.length; i++) {
+//         if (newGame.computer.fighter !== array[i] && newGame.human.fighter !== array[i]) {
+//             difficultIcons[i].classList.add('hidden')
+//     } 
+//    }
     newGame.chooseWinner()
     increaseScore()
 }
 
 function increaseScore() {
     if (newGame.winner === 'human') {
-        humanWins.innerText = newGame.human.wins
+        humanWins.innerText = (`Wins: ${newGame.human.wins}`)
     } else if (newGame.winner === 'computer') {
-        compWins.innerText = newGame.computer.wins
+        compWins.innerText = (`Wins: ${newGame.computer.wins}`)
     }
     displayWinner()
 }
@@ -142,22 +153,6 @@ function displayDraw() {
 
 
 
-
-// [DONE]click classic button, button-container disappears and icons appear
-// [DONE]click classic and classic icons appear
-// [DONE]click difficult and difficult icons appear
-// [DONE] human selects icon and their logo is attached under their selection
-//     [DONE]function to display icon
-//      [DONE]function to switch players (computer selects) 
-// [DONE]then computer randomly selects icon 
-    //[DONE]//and their selection + human selection icons appear
-// [DONE]rest of the icons disappear
-// [DONE]call choosewinner method to determine winner
-// [DONE]then a winner is declared: 
-        //[DONE}winner score increased by 1; 
-        //[DONE]text declaring winner appears; 
-        //[DONE]game resets with all of the icons
-// [DONE] function resetgame (not resetting game instance); clearing game type, fighters
 
 // display correct icons
 // display icons on correct side

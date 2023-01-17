@@ -1,4 +1,6 @@
 * {
+    box-sizing: border-box;
+    border: solid 2px black;
     font-family: 'Amatic SC', cursive;
     color: white;
     overflow: hidden;
@@ -144,4 +146,9 @@ h1 {
    .alien {
     border: none;
     background-color: purple;
+  }
+
+  .human-choice {
+    height: 8vh;
+    width: 8vh
   }
