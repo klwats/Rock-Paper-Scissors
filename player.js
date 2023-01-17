@@ -1,4 +1,4 @@
-class Player{
+class Player {
     constructor(name, token, fighter) {
         this.name = name;
         this.token = token;
@@ -7,9 +7,12 @@ class Player{
     }
 
     takeTurn() {
-
-        
-}
+        if (this.player.name = 'human') {
+            humanSelection()
+        } else {
+            computerSelection()
+        }
+    }
 }
 
 

@@ -12,40 +12,50 @@
     <aside class="section-1">
         <h4 class="human-logo">🤦🏼‍♀️</h4>
         <h3>Human</h3>
-        <h4>Wins: 0</h4>
-        <button class="reset-btn hidden" id="resetGame">Reset Game</button>
+        <h4 class="humanWins">Wins: 0</h4>
+        <button class="change-btn hidden" id="changeGame">Change Game</button>
     </aside>
     <main class="section-2">
         <header>
             <h1>Rock, Paper, Scissors</h1>
             <h3 class="choose-game">Choose Your Game!</h3>
+            <div class="selections">
+                <section class="human-choice"></section>
+                <section class="computer-choice"></section>
+            </div>
         </header>
         <section class="buttons-container" id="buttons">
-            <button class="classic-btn" id="classicButton">Classic</button>
-            <button class="difficult-btn" id="difficultButton">Difficult</button>
+            <button class="classic-btn" id="classicButton">
+                <span class="classic-title">Classic<br></span>
+                <span class="classic-rules">rock>scissors<br> paper>rock<br> scissors>paper</span>
+            </button>
+            <button class="difficult-btn" id="difficultButton"> 
+                <span class="difficult-title">Difficult</span>
+                <span class="difficult-rules">rock>scissors & lizard paper>rock & alien scissors>paper & lizard lizard>paper & alien alien>scissors & rock</span>
+            </button>
         </section>
         <section class="icons" id="iconsSection">
             <button class="paper classic difficult hidden" id="paperIcon">
-                <img id="paper" src="icons/happy-paper.png" style="width: 100px; height: 100px" alt=""></button>
+                <img class="pi image" id="paper" src="icons/happy-paper.png" style="width: 100px; height: 100px" alt=""></button>
                 <label class="paper-label hidden" for="paper">🤦🏼‍♀️</label>
             <button class="rock classic difficult hidden" id="rockIcon">
-                <img id="rock" src="icons/happy-rocks.png" style="width: 100px; height: 100px" alt=""></button>
+                <img class="ri image" id="rock" src="icons/happy-rocks.png" style="width: 100px; height: 100px" alt=""></button>
                 <label class="rock-label hidden" for="rock">🤦🏼‍♀️</label>
             <button class="scissors classic difficult hidden" id="scissorsIcon">
-                <img id="scissors" src="icons/happy-scissors.png" style="width: 100px; height: 100px" alt=""></button>
+                <img class="si image" id="scissors" src="icons/happy-scissors.png" style="width: 100px; height: 100px" alt=""></button>
                 <label class="scissors-label hidden" for="scissors">🤦🏼‍♀️</label>
             <button class="iguana difficult hidden" id="iguanaIcon">
-                <img id="iguana" src="icons/iguana.png" style="width: 100px; height: 100px" alt=""></button>
+                <img class="ii image" id="iguana" src="icons/iguana.png" style="width: 100px; height: 100px" alt=""></button>
                 <label class="iguana-label hidden" for="iguana">🤦🏼‍♀️</label>
             <button class="alien difficult hidden" id="alienIcon">
-                <img id="alien" src="icons/lines-alien.png" style="width: 100px; height: 100px" alt=""></button>
+                <img class="ai image" id="alien" src="icons/lines-alien.png" style="width: 100px; height: 100px" alt=""></button>
                 <label class="alien-label hidden" for="alien">🤦🏼‍♀️</label>
         </section>
     </main>
     <aside class="section-3">
         <h4 class="computer-logo">🖥️</h4>
         <h3>Computer</h3>
-        <h4>Wins: 0</h4>
+        <h4 class="compWins">Wins: 0</h4>
     </aside>
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="game.js"></script>

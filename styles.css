@@ -1,11 +1,8 @@
 * {
-    box-sizing: border-box;
-    border: 1px solid black;
     font-family: 'Amatic SC', cursive;
     color: white;
     overflow: hidden;
     margin: 0;
-   
   }
   
   body {
@@ -14,36 +11,24 @@
     width: 100vw; 
 }
 
-.section-1 {
-  height: 100vh;
+.section-1,
+.section-3 {
+    height: 100vh;
     width: 15vw;
     background-color: purple;
     font-size: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .section-2 {
-  height: 100vh;
+    height: 100vh;
     width: 70vw;
-    background-color: green;
+    background-color: purple;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-}
-
-.section-3 {
-  height: 100vh;
-    width: 15vw;
-    background-color: blue;
-    font-size: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
 }
 
 header {
@@ -51,51 +36,115 @@ header {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 200px; 
+  height: 350px; 
 }
 
 h1 {
-  font-size: 100px;
+  font-size: 90px;
 }
 
 .choose-game {
   font-size: 40px;
 }
 
-  .classic-btn, .difficult-btn {
-    height: 12rem;
-    width: 12rem;
-    color: black;
-    margin: 10px;
-    font-size: 6vh;
+.human-logo, 
+.computer-logo {
+  margin: 20px;
+}
+
+.classic-btn, 
+.difficult-btn, 
+.classic-title, 
+.difficult-title {
+  height: 12rem;
+  width: 12rem;
+  color: black;
+  margin: 10px;
+  font-size: 4.5vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.classic-title, 
+.difficult-title {
+  height: 3rem;
+}
+
+.classic-rules, 
+.difficult-rules {
+  height: 7rem;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  font-size: 2vh;
+  color: black;
+}
+
+.classic-btn, 
+.difficult-btn {
+  display: flex;
+  align-items: center;
   }
 
-  .buttons-container {
-    width: 100%;
-  }
+.buttons-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px
+}
 
-  .home-page-buttons {
-    display: flex;
-    flex-flow: column;
+.home-page-buttons {
+  display: flex;
+  flex-flow: column;
+}
 
-  }
+.icons {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .icons {
-    height: 300px;
-    width: 100%;
-  }
+.classic-btn, 
+.difficult-btn, 
+.paper, 
+.rock, 
+.scissors, 
+.iguana, 
+.alien, 
+.change-btn {
+  cursor: pointer;
+}
 
-  .classic-btn, .difficult-btn, .paper, .rock, .scissors, .iguana, .alien, .reset-btn {
-    cursor: pointer;
-  }
+.hidden {
+  display: none;
+}
 
-  .hidden {
-    display: none;
-  }
+.change-btn {
+  background-color: black;
+  margin-top: 2rem;
+  height: 2rem;
+}
 
-  .reset-btn {
-    background-color: black;
-    margin-top: 2rem
-  }
+.scissors, 
+.rock, 
+.paper, 
+.iguana, 
+.alien {
+  border: none;
+  background-color: purple;
+}
 
-  
+.human-choice,
+.computer-choice {
+  height: 16vh;
+  width: 16vh;
+}
+
+.selections {
+  display: flex;
+  justify-content: center;
+}

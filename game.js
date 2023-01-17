@@ -1,18 +1,16 @@
 class Game {
-    constructor(gameType) {
+    constructor() {
         this.human = new Player();
         this.computer = new Player();
-        this.gameType = gameType;
+        this.gameType = '';
         this.fighters = [];
         this.winner = '';
-        this.draw = true;
-        
+        this.draw;   
     }
 
-    
     chooseWinner() {
         if (this.human.fighter === this.computer.fighter) {
-            this.draw()
+            this.declareDraw()
         } else if (this.human.fighter === 'scissors' && this.computer.fighter === 'paper') {
             this.human.wins ++;
             this.winner = 'human'
@@ -49,29 +47,50 @@ class Game {
         } else if (this.human.fighter === 'paper' && this.computer.fighter === 'alien') {
             this.human.wins ++;
             this.winner = 'human'
-        } 
+        } else if (this.human.fighter === 'alien' && this.computer.fighter === 'rock') {
+            this.human.wins ++
+            this.winner = 'human'
+        } else if (this.human.fighter === 'alien' && this.computer.fighter === 'scissors') {
+            this.human.wins ++;
+            this.winner = 'human'
+        } else if (this.human.fighter === 'alien' && this.computer.fighter === 'iguana') {
+            this.computer.wins ++;
+            this.winner = 'computer'
+        } else if (this.human.fighter === 'alien' && this.computer.fighter === 'paper') {
+            this.computer.wins ++;
+            this.winner = 'computer'
+        } else if (this.human.fighter === 'iguana' && this.computer.fighter === 'rock') {
+            this.computer.wins ++;
+            this.winner = 'computer'
+        } else if (this.human.fighter === 'iguana' && this.computer.fighter === 'scissors') {
+            this.computer.wins ++;
+            this.winner = 'computer'
+        } else if (this.human.fighter === 'iguana' && this.computer.fighter === 'alien') {
+            this.human.wins ++;
+            this.winner = 'human'
+        } else if (this.human.fighter === 'iguana' && this.computer.fighter === 'paper') {
+            this.human.wins ++;
+            this.winner = 'human'
+        }
     }
 
-    draw() {
+    declareDraw() {
         if (this.human.fighter === this.computer.fighter) {
-            resetBoard()
-            return 'It/s a draw!'
+            displayDraw()
         }
     }
 
     resetBoard() {
+        this.winner = ''
         if (this.gameType === 'classic') {
-            selectClassic()
+            selectClassic();
+            humanChoice.innerHTML = '';
+            computerChoice.innerHTML = '';
         } else {
             selectDifficult()
-        }
-
-
+            humanChoice.innerHTML = '';
+            computerChoice.innerHTML = '';
+        }  
     }
-
-    selectGame() {
-        
-    }
-
 }
 
